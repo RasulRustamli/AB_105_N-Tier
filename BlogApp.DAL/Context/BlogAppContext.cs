@@ -1,4 +1,5 @@
 ﻿using BlogApp.Core.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BlogApp.DAL.Context
 {
-    public class BlogAppContext : DbContext
+    public class BlogAppContext : IdentityDbContext<AppUser>
     {
         public BlogAppContext(DbContextOptions<BlogAppContext> options) : base(options)
         {
